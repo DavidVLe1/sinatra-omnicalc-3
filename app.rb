@@ -13,7 +13,7 @@ get("/umbrella") do
   erb(:umbrella_form)
 end
 
-get("/process_umbrella") do
+post("/process_umbrella") do
   @user_location = params.fetch("user_loc")
   gmaps_api_key = ENV.fetch("GMAPS_KEY")
 
