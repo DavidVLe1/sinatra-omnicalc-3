@@ -1,3 +1,4 @@
+<%= cookies %>
 <h1>Should I take an umbrella?</h1>
 
 <form action="/process_umbrella" method="post">
@@ -8,3 +9,11 @@
 
   <button>Submit</button>
 </form>
+
+<p>You last searched for:</p>
+
+<ul>
+<li><%= cookies["last_location"] %></li>
+<li><%= cookies["last_lat"] %></li>
+<li><%= cookies["last_lng"] %></li>
+</ul>

@@ -1,6 +1,7 @@
 require "sinatra"
 require "sinatra/reloader"
 require "http"
+require "sinatra/cookies"
 
 get("/") do
   "
@@ -27,6 +28,10 @@ post("/process_umbrella") do
   @loc_hash = @parsed_response.dig("results", 0, "geometry", "location")
   @latitude = @loc_hash.fetch("lat")
   @longitude = @loc_hash.fetch("lng")
+
+  cookies["last_location"]=@user_location
+  cookies["last_lat"]=@latitude
+  cookies["last_lng"]=@longitude
 
   pirate_weather_api_key = ENV.fetch("PIRATE_WEATHER_KEY")
 
