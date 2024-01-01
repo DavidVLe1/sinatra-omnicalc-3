@@ -1,3 +1,4 @@
+<%= @currently_hashed %>
 <h1>Should I take an umbrella?</h1>
 
 <dl>
@@ -9,6 +10,15 @@
 
   <dt>Longitude</dt>
   <dd><%= @longitude%></dd>
+
+  <dt>Current Temperature</dt>
+  <dd><%= @current_temp%></dd>
+
+  <dt>Current Summary</dt>
+  <dd><%= @summary%></dd>
+
+  <dt>Umbrella</dt>
+  <dd><%= @umbrella_needed%></dd>
 </dl>
 
 <a href="/umbrella">Go back</a>
